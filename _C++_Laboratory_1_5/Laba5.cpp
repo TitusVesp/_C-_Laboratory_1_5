@@ -56,14 +56,14 @@ void RNP()
 				if (op2 != 0.0)
 					st->Push(st->Pop() / op2);
 				else
-					cout << "Ошибка-> Деление на ноль" << endl;
+					cout << "Error -> devision by zero!" << endl;
 				break;
 			case 'q':
-				cout << "Результат: " << st->Pop() << endl;
+				cout << "Result: " << st->Pop() << endl;
 				break;
 			case ' ': break;
 			default:
-				cout << "Ошибка. Неизвестная команда" << endl;
+				cout << "Error -> Unknow command!" << endl;
 				break;
 			}
 		}
