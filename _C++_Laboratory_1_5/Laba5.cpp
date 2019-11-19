@@ -15,14 +15,22 @@ void RNP()
 	cout << "Imput your expression, if you want to imput func press F(with space!!!!): " << endl;
 	char* expr = new char[256];
 	cin.getline(expr, 256);
-
-	for (int i = 0; expr[i] > 0; i++) 
+	char temp = ' ';
+	for (int i = 0; expr[i] > 0; i++)
+	{
 		if (!isdigit(expr[i]) && expr[i] != '+' && expr[i] != '-' && expr[i] != '/' && expr[i] != '*' && expr[i] != '(' && expr[i] != ')' && expr[i] != ' ' && expr[i] != 'F')
+		{
+			cout << "Incorrect Input!" << endl;
+			return;
+		}
+		if (expr[i] != ' ') temp = expr[i];
+	}
+	if (isdigit(temp))
 	{
 		cout << "Incorrect Input!" << endl;
 		return;
 	}
-	Stack *st = new Stack();
+	Stack* st = new Stack();
 	int i = 0;
 	while (expr[i] > 0)
 	{
