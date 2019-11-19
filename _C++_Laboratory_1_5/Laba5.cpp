@@ -18,7 +18,7 @@ void RNP()
 	char temp = ' ';
 	for (int i = 0; expr[i] > 0; i++)
 	{
-		if (!isdigit(expr[i]) && expr[i] != '+' && expr[i] != '-' && expr[i] != '/' && expr[i] != '*' && expr[i] != '(' && expr[i] != ')' && expr[i] != ' ' && expr[i] != 'F')
+		if (!isdigit(expr[i]) && expr[i] != '+' && expr[i] != '-' && expr[i] != '^' && expr[i] != '/' && expr[i] != '*' && expr[i] != '(' && expr[i] != ')' && expr[i] != ' ' && expr[i] != 'F')
 		{
 			cout << "Incorrect Input!" << endl;
 			return;
@@ -55,6 +55,9 @@ void RNP()
 				break;
 			case '*':
 				st->Push(st->Pop() * st->Pop());
+				break;
+			case '^':
+				st->Push(pow(st->Pop(),st->Pop()));
 				break;
 			case '-':
 				op2 = st->Pop();
